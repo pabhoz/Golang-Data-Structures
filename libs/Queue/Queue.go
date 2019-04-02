@@ -33,7 +33,7 @@ func (q *Queue) Rear() *dll.Element {
 
 // IsEmpty returns true or false
 func (q *Queue) IsEmpty() bool {
-	return q.elements.Len() > 0
+	return q.elements.Len() == 0
 }
 
 // IsFull returns true or false
