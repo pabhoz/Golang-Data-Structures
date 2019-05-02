@@ -24,14 +24,35 @@ func main() {
 
 func hashTables() {
 	ht := hashtable.New()
-	ht.Add(9864567654, "bar")
+	/*ht.Add(9864567654, "bar")
+	fmt.Println(ht)*/
+
+	type Employee struct {
+		name   string
+		number int
+		job    string
+	}
+
+	narvaez := Employee{name: "J David", number: 100345, job: "boss"}
+	fmt.Println(narvaez)
+	ruiz := Employee{name: "J David", number: 200345, job: "big boss"}
+	fmt.Println(ruiz)
+
+	ht.Add(narvaez.number, &narvaez)
+	ht.Add(ruiz.number, &ruiz)
+
 	fmt.Println(ht)
+	fmt.Println(ht.Get(100345))
 }
 
 func dictionaries() {
 	dict := dictionary.New()
 	dict.Add("foo", "bar")
+	dict.Add("ruiz", "4.7")
+	dict.Add("narvaez", "4.9")
+	dict.Add("Alejandro", "2.1")
 	fmt.Println(dict)
+	fmt.Println(dict.GetByIndex(2))
 }
 
 func dlls() {
