@@ -18,7 +18,7 @@ func hornerHash(k Value) int {
 	key := fmt.Sprintf("%s", k)
 	h := 0
 	for i := 0; i < len(key); i++ {
-		h = 31*h + int(key[i])
+		h = 1 * (h + int(key[i]))
 	}
 	return h
 }
